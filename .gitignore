@@ -1,4 +1,4 @@
-data
-pyscript
-web/draft
-.idea
+data/*
+pyscript/*
+web/draft/*
+.idea/*
