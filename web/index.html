@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FSIDvis: Fossil Specimens Image Dataset Visualization</title>
+    <title>Fossil Explorer</title>
+    <link href="css/master_style.css" type="text/css" rel="stylesheet">
     <link href="css/FSIDvis.css" type="text/css" rel="stylesheet">
     <link href="css/mapbox-gl.css" type="text/css" rel="stylesheet">
 
@@ -14,8 +15,12 @@
 <body>
 <div id="main">
     <div id="fsimg">
-        <a id="closeimg" href="#" class="close" style="left: 10px"></a>
-        <div class="imgcontain"></div>
+        <div class="buttonBorder">
+            <button id="close" class="btn btn-default btn-xs imgButton">x</button>
+            <button id="amplify" class="btn btn-default btn-xs imgButton">+</button>
+            <button id="narrow" class="btn btn-default btn-xs imgButton">-</button>
+        </div>
+        <img src="#" alt="#" width="100%" height="100%" style="display: inherit">
     </div>
     <div id="tooltip"></div>
     <div id="imageWindow">

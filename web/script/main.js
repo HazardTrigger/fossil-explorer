@@ -11,5 +11,5 @@ Promise.all(dataList).then(function (datas) {
     projectMapData(_.cloneDeep(fossilData), node_g, map);
     mapboxSvg.on('mousemove', event => glyphMousemove(node_g, glyph_g, sunburst_node_g, sunburst_label_g, event, 'map'));
     dragElement(document.getElementById("fsimg"));
-    dragElement(document.getElementById("imageWindow"));
+    // dragElement(document.getElementById("imageWindow"));
 });

@@ -47,18 +47,6 @@ function updateSunburst(node_g, label_g, data, color) {
         .join(
             enter => enter.append('path')
                 .attr('class', 'node')
-                // .transition()
-                .attr('stroke', '#bbb')
-                .attr('stroke-width', 0.5)
-                .attr('fill', d => {
-                    d.color = '#f6f5ee';
-                    return '#f6f5ee';
-                })
-                .attr('d', arc)
-                .selection(),
-            update => update
-                .attr('class', 'node')
-                // .transition()
                 .attr('stroke', '#bbb')
                 .attr('stroke-width', 0.5)
                 .attr('fill', d => {
@@ -66,7 +54,15 @@ function updateSunburst(node_g, label_g, data, color) {
                     return '#f6f5ee';
                 })
                 .attr('d', arc),
-                // .selection(),
+            update => update
+                .attr('class', 'node')
+                .attr('stroke', '#bbb')
+                .attr('stroke-width', 0.5)
+                .attr('fill', d => {
+                    d.color = '#f6f5ee';
+                    return '#f6f5ee';
+                })
+                .attr('d', arc),
             exit => exit.transition().remove()
         )
         .on('mouseover', function (event, d) {
@@ -135,10 +131,8 @@ function updateSunburst(node_g, label_g, data, color) {
                     let y = (d.y0 + d.y1) / 2;
                     return `rotate(${x - 90}) translate(${y}, 0) rotate(${x < 180 ? 0 : 180})`;
                 })
-                .transition()
                 .attr('dy', '0.35em')
-                .text(d => d.value)
-                .selection(),
+                .text(d => d.value),
             update => update
                 .attr('class', 'sunburstLabel')
                 .attr('transform', function (d) {
@@ -146,10 +140,8 @@ function updateSunburst(node_g, label_g, data, color) {
                     let y = (d.y0 + d.y1) / 2;
                     return `rotate(${x - 90}) translate(${y}, 0) rotate(${x < 180 ? 0 : 180})`;
                 })
-                .transition()
                 .attr('dy', '0.35em')
-                .text(d => d.value)
-                .selection(),
+                .text(d => d.value),
             exit => exit.remove()
         );
 }
@@ -164,7 +156,7 @@ function isWithinGlyph(d, tx, ty) {
 function loadImgs(div, data, event) {
     div.style('display', 'grid')
         .style('z-index', 10000)
-        .style('transform', `translate(${$('#main').width() - $('#imageWindow').width() - 10}px, ${40}px)`);
+        .style('transform', `translate(${$('#main').width() - $('#imageWindow').width() - 50}px, ${40}px)`);
 
     dragElement(document.getElementById("imageWindow"));
 
@@ -213,8 +205,8 @@ function loadImgs(div, data, event) {
                     d3.select('#fsimg')
                         .style('display', 'block')
                         .style("z-index", 5000)
-                        .select('.imgcontain')
-                        .style('background-image', `url("images/graptolites/${d['fig_name']}")`)
+                        .select('img')
+                        .attr('src', `images/graptolites/${d['fig_name']}`);
                 })
         })
 
