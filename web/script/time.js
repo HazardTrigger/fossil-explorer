@@ -55,7 +55,7 @@ function drawTree(data, tree_g, width, height) {
         .attr("fill", d => d.data.color)
         .style('cursor', 'pointer')
         .on('click', function (event, d) {
-            filterByClickTreeToProject(fossilData, d.data.name, node_g, palenode_g, map);
+            filterByClickTreeToProject(fossilData, d.data.name, node_g, map);
             d3.selectAll('.treerect').attr('stroke', 'none');
             d3.select(this).attr('stroke', '#222').attr('stroke-width', 2);
         })
@@ -81,7 +81,7 @@ function drawTree(data, tree_g, width, height) {
         .style('cursor', 'pointer')
         .text(d => d.data.name)
         .on('click', function (event, d) {
-            filterByClickTreeToProject(fossilData, d.data.name, node_g, palenode_g, map);
+            filterByClickTreeToProject(fossilData, d.data.name, node_g, map);
         });
 
     let numText = cell.append("text")
@@ -95,7 +95,7 @@ function drawTree(data, tree_g, width, height) {
         .style('cursor', 'pointer')
         .text(d => d.data.name === '' ? '' : `(${d.data.num} specimens)`)
         .on('click', function (event, d) {
-            filterByClickTreeToProject(fossilData, d.data.name, node_g, palenode_g, map);
+            filterByClickTreeToProject(fossilData, d.data.name, node_g, map);
         });
 
     cell.append("title")

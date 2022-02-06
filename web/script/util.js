@@ -3,7 +3,7 @@ function filterByBrushToProject(data, selection, svg, map) {
     projectData(filterData, svg, map);
 }
 
-function filterByClickTreeToProject(data, age, node_g, palenode_g, map) {
+function filterByClickTreeToProject(data, age, node_g, map) {
     // https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript
     let filterData = [];
     switch (age) {
@@ -46,18 +46,9 @@ function filterByClickTreeToProject(data, age, node_g, palenode_g, map) {
         return;
     }
 
-    // projPaleNodes(palenode_g, filterData);
-    projectData(_.cloneDeep(filterData), node_g, map);
+    projectMapData(_.cloneDeep(filterData), node_g, map);
 
-    let tempidlist = filterData.map(d => d.id);
-    // filterByTreeSnet(tempidlist);
-    // filterByTreeTnet(tempidlist);
-    filterByTreeSnetf(tempidlist);
 }
-
-
-
-// dragElement(document.getElementById("fsimg"));
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -124,33 +115,6 @@ function drag(simulation) {
         .on('end', dragEnd);
 }
 
-function isBrushed(selection, cx, cy) {
-    let x0 = selection[0][0],
-        x1 = selection[1][0],
-        y0 = selection[0][1],
-        y1 = selection[1][1];
-    return x0 <= cx && cx <= x1 && y0 <= cy && cy <= y1;
-}
-
-function switchSnetDiv(isSwitch) {
-    d3.select('#snetcontainer')
-        .on("dblclick", function (event) {
-            if (!isSwitch) {
-                isSwitch = true;
-                d3.select("#snet-force")
-                    .style('display', 'none');
-                d3.select('#snet-layout')
-                    .style('display', 'block');
-            } else {
-                isSwitch = false;
-                d3.select('#snet-layout')
-                    .style('display', 'none');
-                d3.select("#snet-force")
-                    .style('display', 'block');
-            }
-        })
-}
-
 function closeImage() {
     d3.select('#imageWindow')
         .style('display', 'none')
@@ -167,15 +131,6 @@ function closeImage() {
 
 function initAllNodeStroke() {
     node_g.selectAll('.fossil > circle')
-        .style('stroke', '#777');
-
-    tnetnode_g.selectAll('.node > circle')
-        .style('stroke', '#777');
-
-    snetnode_g.selectAll('.node > circle')
-        .style('stroke', '#777');
-
-    snetfnode_g.selectAll('.node > circle')
         .style('stroke', '#777');
 }
 
@@ -200,24 +155,4 @@ function tootipMouseOut(event) {
         .style('z-index', -10);
 
     initAllNodeStroke();
-}
-
-function brushNodeInit() {
-    node_g.selectAll('.fossil')
-        .style('display', 'block');
-    palenode_g.selectAll('.fossil')
-        .style('display', 'block');
-    snetfnode_g.selectAll('.node > circle')
-        .style('stroke', '#777');
-    tnetnode_g.selectAll('.node > circle')
-        .style('stroke', '#777');
-}
-
-function reorderImgGrid(selectedID, data) {
-    let selectedData = data.filter(d => selectedID.indexOf(d.id) !== -1);
-    let differenceData = Array.from(d3.difference(data, selectedData));
-    selectedData = d3.sort(selectedData, (a, b) => d3.descending(a.age_from, b.age_from));
-    differenceData = d3.sort(differenceData, (a, b) => d3.descending(a.age_from, b.age_from));
-    let mergeData = d3.merge([selectedData, differenceData]);
-    drawImgGrid(selectedData, 'imggrid')
 }

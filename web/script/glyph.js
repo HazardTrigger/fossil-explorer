@@ -10,14 +10,6 @@ function glyphMousemove(node_g, glyph_g, sunburst_node_g, sunburst_label_g, even
         })
         .data();
 
-    // mouseoverNodes = selectedData.map(function (d) {
-    //     return d.id;
-    // });
-    // mouseoverNodes = _.uniq(mouseoverNodes);
-    // highlightSnet(mouseoverNodes);
-    // highlightSnetf(mouseoverNodes);
-    // highlightTnet(mouseoverNodes);
-
     if (selectedData.length !== 0) {
         let sunbrustData = d3.rollup(selectedData, v => v, d => d.Family, d => d.Genus);
         drawSunBurst(sunburst_node_g, sunburst_label_g, sunbrustData, sunburstRadius);
@@ -55,19 +47,27 @@ function updateSunburst(node_g, label_g, data, color) {
         .join(
             enter => enter.append('path')
                 .attr('class', 'node')
+                // .transition()
+                .attr('stroke', '#bbb')
+                .attr('stroke-width', 0.5)
                 .attr('fill', d => {
                     d.color = '#f6f5ee';
                     return '#f6f5ee';
                 })
-                .attr('d', arc),
+                .attr('d', arc)
+                .selection(),
             update => update
                 .attr('class', 'node')
+                // .transition()
+                .attr('stroke', '#bbb')
+                .attr('stroke-width', 0.5)
                 .attr('fill', d => {
                     d.color = '#f6f5ee';
                     return '#f6f5ee';
                 })
                 .attr('d', arc),
-            exit => exit.remove()
+                // .selection(),
+            exit => exit.transition().remove()
         )
         .on('mouseover', function (event, d) {
             d3.select(this).attr('fill', d3.color(d.color).brighter());
@@ -75,7 +75,7 @@ function updateSunburst(node_g, label_g, data, color) {
                 d3.select('#tooltip')
                     .style('display', 'block')
                     .style('z-index', 10000)
-                    .style('transform', `translate(${event.x}px, ${event.y}px)`)
+                    .style('transform', `translate(${event.x + 10}px, ${event.y}px)`)
                     .html(`
                     ${d.ancestors().map(d => d.data[0]).reverse().join("/")} <br> 
                     Fossil: ${d.value}
@@ -90,8 +90,12 @@ function updateSunburst(node_g, label_g, data, color) {
         })
         .on('click', function (event, d) {
             if (!d.isClick && d.depth === 1) {
+                node_g.selectAll('.node')
+                    .style('stroke', '#bbb')
+                    .style('stroke-width', 0.5);
+
                 d.isClick = true;
-                d3.select(this).attr('stroke', '#222').attr('stroke-width', 4);
+                d3.select(this).style('stroke', '#222');
 
                 let updateData = d3.merge([data, d.descendants()
                     .filter(d => d.depth === 2)
@@ -103,7 +107,7 @@ function updateSunburst(node_g, label_g, data, color) {
                 updateSunburst(node_g, label_g, updateData, color);
             } else {
                 d.isClick = false;
-                d3.select(this).attr('stroke', '#222').attr('stroke-width', 0.5);
+                d3.select(this).style('stroke', '#bbb');
                 data = data.filter(e => e.depth === 1);
                 node_g.selectAll('.node').filter(e => e.popup === d.data[0] && !d.isClick).remove();
                 label_g.selectAll('.sunburstLabel').filter(e => e.popup === d.data[0] && !d.isClick).remove();
@@ -114,8 +118,8 @@ function updateSunburst(node_g, label_g, data, color) {
 
             if (d.depth === 2) {
                 d3.select('#fsimg').style('display', 'none');
-                d3.selectAll('.node').filter(d => d.depth === 2).attr('stroke', '#222').attr('stroke-width', 0.5);
-                d3.select(this).attr('stroke', '#222').attr('stroke-width', 4);
+                d3.selectAll('.node').filter(d => d.depth === 2).style('stroke', '#bbb').style('stroke-width', 0.5);
+                d3.select(this).style('stroke', '#222');
                 loadImgs(d3.select('#imageWindow'), d.data[1], event);
                 $('#imgsContainer').scrollTop(0);
             }
@@ -131,8 +135,10 @@ function updateSunburst(node_g, label_g, data, color) {
                     let y = (d.y0 + d.y1) / 2;
                     return `rotate(${x - 90}) translate(${y}, 0) rotate(${x < 180 ? 0 : 180})`;
                 })
+                .transition()
                 .attr('dy', '0.35em')
-                .text(d => d.value),
+                .text(d => d.value)
+                .selection(),
             update => update
                 .attr('class', 'sunburstLabel')
                 .attr('transform', function (d) {
@@ -140,8 +146,10 @@ function updateSunburst(node_g, label_g, data, color) {
                     let y = (d.y0 + d.y1) / 2;
                     return `rotate(${x - 90}) translate(${y}, 0) rotate(${x < 180 ? 0 : 180})`;
                 })
+                .transition()
                 .attr('dy', '0.35em')
-                .text(d => d.value),
+                .text(d => d.value)
+                .selection(),
             exit => exit.remove()
         );
 }
