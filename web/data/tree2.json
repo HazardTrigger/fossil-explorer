@@ -1,0 +1,160 @@
+{
+  "name": "Paleozoic",
+  "color": "#9EC2A6",
+  "num": 1550,
+  "children": [
+    {
+      "name": "Ordovician",
+      "color": "#00A88E",
+      "num": 1176,
+      "children": [
+        {
+          "name": "Lower",
+          "color": "#00AE8E",
+          "num": 0,
+          "children": [
+            {
+              "name": "Tremadocian",
+              "color": "#8CD3C7",
+              "value": 0.1,
+              "num": 0
+            },
+            {
+              "name": "Floian",
+              "color": "#FFFFB2",
+              "value": 0.1,
+              "num": 0
+            }
+          ]
+        },
+        {
+          "name": "Middle",
+          "color": "#28BA9C",
+          "num": 385,
+          "children": [
+            {
+              "name": "Dapingian",
+              "color": "#BEBAD9",
+              "value": 0.1,
+              "num": 116
+            },
+            {
+              "name": "Darriwilian",
+              "color": "#FB8072",
+              "value": 0.1,
+              "num": 342
+            }
+          ]
+        },
+        {
+          "name": "Upper",
+          "color": "#81CBAE",
+          "num": 838,
+          "children": [
+            {
+              "name": "Sandbian",
+              "color": "#7FB1D3",
+              "value": 0.1,
+              "num": 263
+            },
+            {
+              "name": "Katian",
+              "color": "#FDB462",
+              "value": 0.1,
+              "num": 408
+            },
+            {
+              "name": "Hirnantian",
+              "color": "#B3DE68",
+              "value": 0.1,
+              "num": 167
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Silurian",
+      "color": "#B1DDC9",
+      "num": 362,
+      "children": [
+        {
+          "name": "Llandovery",
+          "color": "#97D5C9",
+          "num": 336,
+          "children": [
+            {
+              "name": "Rhuddanian",
+              "color": "#FBCDE5",
+              "value": 0.0625,
+              "num": 214
+            },
+            {
+              "name": "Aeronian",
+              "color": "#D9D9D9",
+              "value": 0.0625,
+              "num": 192
+            },
+            {
+              "name": "Telychian",
+              "color": "#BC80BC",
+              "value": 0.0625,
+              "num": 105
+            }
+          ]
+        },
+        {
+          "name": "Wenlock",
+          "color": "#B0DED3",
+          "num": 26,
+          "children": [
+            {
+              "name": "Sheinwoodian",
+              "color": "#CCEBC5",
+              "value": 0.0625,
+              "num": 0
+            },
+            {
+              "name": "Homerian",
+              "color": "#FFED6F",
+              "value": 0.0625,
+              "num": 26
+            }
+          ]
+        },
+        {
+          "name": "Ludlow",
+          "color": "#BDE4DC",
+          "num": 0,
+          "children": [
+            {
+              "name": "Gorstian",
+              "color": "#974EA3",
+              "value": 0.0625,
+              "num": 0
+            },
+            {
+              "name": "Ludfordian",
+              "color": "#A65629",
+              "value": 0.0625,
+              "num": 0
+            }
+          ]
+        },
+        {
+          "name": "Pridoli",
+          "color": "#E3F2E7",
+          "num": 0,
+          "children": [
+            {
+              "name": "",
+              "color": "#FFFF99",
+              "value": 0.0625,
+              "num": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
