@@ -24,7 +24,7 @@ body {
 #mainview {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 70% 30%;
+    grid-template-rows: 5% 65% 30%;
     position: absolute;
     z-index: 0;
     width: 100%;
@@ -418,4 +418,28 @@ body {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 100% 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
 }

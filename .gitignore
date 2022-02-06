@@ -2,3 +2,4 @@ data/*
 pyscript/*
 web/draft/*
 .idea/*
+app.py
