@@ -15,13 +15,13 @@
           "children": [
             {
               "name": "Tremadocian",
-              "color": "#8CD3C7",
+              "color": "#68D2C4",
               "value": 0.1,
               "num": 0
             },
             {
               "name": "Floian",
-              "color": "#FFFFB2",
+              "color": "#69D4C8",
               "value": 0.1,
               "num": 0
             }
@@ -34,13 +34,13 @@
           "children": [
             {
               "name": "Dapingian",
-              "color": "#BEBAD9",
+              "color": "#9FDBCE",
               "value": 0.1,
               "num": 116
             },
             {
               "name": "Darriwilian",
-              "color": "#FB8072",
+              "color": "#A8DDD4",
               "value": 0.1,
               "num": 342
             }
@@ -53,19 +53,19 @@
           "children": [
             {
               "name": "Sandbian",
-              "color": "#7FB1D3",
+              "color": "#BBE2CE",
               "value": 0.1,
               "num": 263
             },
             {
               "name": "Katian",
-              "color": "#FDB462",
+              "color": "#C2E5D9",
               "value": 0.1,
               "num": 408
             },
             {
               "name": "Hirnantian",
-              "color": "#B3DE68",
+              "color": "#CAE8D9",
               "value": 0.1,
               "num": 167
             }
@@ -85,19 +85,19 @@
           "children": [
             {
               "name": "Rhuddanian",
-              "color": "#FBCDE5",
+              "color": "#C9E8DF",
               "value": 0.0625,
               "num": 214
             },
             {
               "name": "Aeronian",
-              "color": "#D9D9D9",
+              "color": "#D0EBE5",
               "value": 0.0625,
               "num": 192
             },
             {
               "name": "Telychian",
-              "color": "#BC80BC",
+              "color": "#D7EFEA",
               "value": 0.0625,
               "num": 105
             }
@@ -110,13 +110,13 @@
           "children": [
             {
               "name": "Sheinwoodian",
-              "color": "#CCEBC5",
+              "color": "#D8EEE5",
               "value": 0.0625,
               "num": 0
             },
             {
               "name": "Homerian",
-              "color": "#FFED6F",
+              "color": "#DFF2EB",
               "value": 0.0625,
               "num": 26
             }
@@ -129,13 +129,13 @@
           "children": [
             {
               "name": "Gorstian",
-              "color": "#974EA3",
+              "color": "#DFF2F0",
               "value": 0.0625,
               "num": 0
             },
             {
               "name": "Ludfordian",
-              "color": "#A65629",
+              "color": "#E7F5F1",
               "value": 0.0625,
               "num": 0
             }
@@ -148,7 +148,7 @@
           "children": [
             {
               "name": "",
-              "color": "#FFFF99",
+              "color": "#e5f3e7",
               "value": 0.0625,
               "num": ""
             }

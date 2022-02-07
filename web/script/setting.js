@@ -43,6 +43,29 @@ let AgeColorMap = {
     'Rhuddanian-Areonian': '#C1E6DF',
     'Darriwilian-Sandbian': '#777',
     'Dapingian-Darriwilian': '#7ED6C4'
+};
+
+colorMap = {
+    'Aeronian, Llandovery (early Silurian)': '#D0EBE5',
+    'Aeroian, Llandovery (early Silurian)': '#D0EBE5',
+    'Aeronian-Telychian, Llandovery (Early Silurian)': '#D9D9D9',
+    'Aeroian-Telychian, Llandovery (Early Silurian)': '#D9D9D9',
+    'Dapingian, Middle Ordovician': '#BEBAD9',
+    'Dapingian-Darriwilian (Middle Ordovician)': '#BEBAD9',
+    'Darriwilian (Middle Ordovician)': '#FB8072',
+    'Darriwilian (Middle Ordovician)-Sandbian (Late Ordovician)': '#FB8072',
+    'Darrwilian (Middle Ordovician)-Sandbian (Late Ordovician)': '#FB8072',
+    'Hirnantian': '#B3DE68',
+    'Hirnantian, Late Ordovician': '#B3DE68',
+    'Homerian, Wenlock (Silurian)': '#FFED6F',
+    'Katian, Late Ordovician': '#FDB462',
+    'Rhuddanian, Llandovery (early Silurian)': '#FBCDE5',
+    'Rhuddanian-Aeronian, Llandovery (early Silurian)': '#FBCDE5',
+    'Rhuddanian-Aeroian, Llandovery (early Silurian)': '#FBCDE5',
+    'Rhuddanian-Telychian, Llandovery (Early Silurian)': '#FBCDE5',
+    'Rhuddanian-n, Llandovery (early Silurian)': '#FBCDE5',
+    'Sandbian, Late Ordovician': '#7FB1D3',
+    'Telychian, Llandovery (Early Silurian)': '#BC80BC'
 }
 
 let arcSortMap = {

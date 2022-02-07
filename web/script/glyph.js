@@ -155,10 +155,8 @@ function isWithinGlyph(d, tx, ty) {
 
 function loadImgs(div, data, event) {
     div.style('display', 'grid')
-        .style('z-index', 10000)
+        .style('z-index', 5000)
         .style('transform', `translate(${$('#main').width() - $('#imageWindow').width() - 50}px, ${40}px)`);
-
-    dragElement(document.getElementById("imageWindow"));
 
     div.select('#imgsContainer')
         .style('grid-template-columns', `${$('#imageWindow').width() * 0.98}px`)

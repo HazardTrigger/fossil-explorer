@@ -45,3 +45,39 @@ d3.select('#map')
             closeImage();
         }
     });
+
+// https://stackoverflow.com/questions/38416661/how-to-remove-d3-behavior-drag-ondrag-event-handler
+let isdrag = false;
+d3.select('#imageWindow')
+    .on('dblclick', function (event) {
+        if (!isdrag) {
+            isdrag = true;
+            d3.select(this)
+                .call(
+                    d3.drag()
+                        .on('drag', function (event) {
+                            let x = $(this).position().left,
+                                y = $(this).position().top;
+                            d3.select(this).style('transform', `translate(${x + event.dx}px, ${y + event.dy}px)`);
+                        })
+                );
+        } else {
+            isdrag = false;
+            d3.select(this)
+                .call(d3.drag()
+                    .on('drag', null));
+        }
+    })
+// d3.select('#imageWindow')
+//     .call(
+//         d3.drag()
+//             .on('drag', function (event) {
+//                 let x = $(this).position().left,
+//                     y = $(this).position().top;
+//                 d3.select(this).style('transform', `translate(${x + event.dx}px, ${y + event.dy}px)`);
+//             })
+//     );
+// d3.select('#imageWindow')
+//     .call(d3.drag()
+//         .on('drag', null))
+
