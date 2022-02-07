@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fossil Explorer</title>
+    <style>
+        body {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 5% 95%;
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .topnav a.deactive {
+            background-color: transparent;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div style="position: absolute; width: 100%; height: 100%">
+    <div class="content">
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="relatedwork.html">Related Work</a>
+            <a href="about.html">About</a>
+        </div>
+        <div id="aboutContent">
+            <h2 style="text-align: center;color:#000000">About</h2>
+            <ul style="font-size: 20px; margin-left: 89px; margin-right: 89px;">
+                <li>
+                    <a>Information visualization and visual analytics technology has attracted significant attention
+                        from the financial regulation community. In this research, we present regvis.net, a visual
+                        survey of regulatory visualization that allows researchers from both the computing and financial
+                        communities to review their literature of interest. We have collected and manually tagged more
+                        than 80 regulation-visualization related publications. To the best of our knowledge, this is the
+                        first publication set tailored for regulatory visualization. We have provided a webpage
+                        (http://regvis.net) for interactive searches and filtering. Each publication is represented by a
+                        thumbnail of the representative system interface or key visualization chart, and users can
+                        conduct multi-condition screening explorations and fixed text searches.</a>
+                    <br>
+                    <br>
+                </li>
+                <li>
+                    <a>Please contact me (zniu@tju.edu.cn) if you have comments, suggestions, submissions, or are
+                        interested in collaborating on research in this area. </a>
+                    <br>
+                    <br>
+                </li>
+                <li>
+                    <a>@article{niu2020regvis,<br>
+                        title={regvis. net--A Visual Bibliography of Regulatory Visualization},<br>
+                        author={Niu, Zhibin and Li, Runlin and Wu, Junqi and Xue, Yaqi and Zhang, Jiawan},<br>
+                        conference ={IEEE vis poster; arXiv:2007.03573},<br>
+                        year={2020}<br>
+                        }<br></a>
+                    <br>
+                </li>
+                <li>
+                    <b>Credit</b>
+                    <br>
+                    <a>PI: Dr. Zhi-bin Niu (zniu@tju.edu.cn)<br>
+                        Data Curation: Junqi Wu<br>
+                        Software: Junqi Wu (v1)</a>
+                    <br>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

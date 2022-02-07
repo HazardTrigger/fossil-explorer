@@ -443,3 +443,8 @@ body {
   background-color: #04AA6D;
   color: white;
 }
+
+.topnav a.deactive {
+  background-color: transparent;
+  color: white;
+}
