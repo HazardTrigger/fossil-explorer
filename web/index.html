@@ -17,15 +17,19 @@
 <div id="main">
     <div id="fsimg">
         <div class="buttonBorder">
-            <button id="close" class="btn btn-default btn-xs imgButton">x</button>
-            <button id="amplify" class="btn btn-default btn-xs imgButton">+</button>
-            <button id="narrow" class="btn btn-default btn-xs imgButton">-</button>
+            <button class="btn btn-default btn-xs imgButton close"></button>
+            <button id="amplify" class="btn btn-default btn-xs imgButton"></button>
+            <button id="narrow" class="btn btn-default btn-xs imgButton"></button>
+            <button class="btn btn-default btn-xs imgButton drag"></button>
         </div>
         <img src="#" alt="#" width="100%" height="100%" style="display: inherit">
     </div>
     <div id="tooltip"></div>
     <div id="imageWindow">
-        <a id="closeButton" href="#" class="close"></a>
+        <div class="buttonBorder2">
+            <button class="btn btn-default btn-xs imgButton drag"></button>
+            <button class="btn btn-default btn-xs imgButton close"></button>
+        </div>
         <div id="imgsContainer"></div>
     </div>
     <div id="mainview">

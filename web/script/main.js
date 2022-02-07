@@ -17,6 +17,7 @@ window.onload = function () {
         drawTree(datas[0], tree_g, clipTimeWidth, clipTimeHeight)
         projectMapData(_.cloneDeep(fossilData), node_g, map);
         mapboxSvg.on('mousemove', event => glyphMousemove(node_g, glyph_g, sunburst_node_g, sunburst_label_g, event, 'map'));
+        // dragElement(document.getElementById('fsimg'));
     });
 }
 

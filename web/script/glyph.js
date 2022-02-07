@@ -91,6 +91,7 @@ function updateSunburst(node_g, label_g, data, color) {
                     .style('stroke-width', 0.5);
 
                 d.isClick = true;
+                d3.selectAll('.node').filter(d => d.depth === 1).style('stroke', '#bbb').style('stroke-width', 0.5);
                 d3.select(this).style('stroke', '#222');
 
                 let updateData = d3.merge([data, d.descendants()
@@ -202,6 +203,7 @@ function loadImgs(div, data, event) {
                 .on('click', function (event, d) {
                     d3.select('#fsimg')
                         .style('display', 'block')
+                        .style('transform', `translate(${0}px, ${0}px)`)
                         .style("z-index", 5000)
                         .select('img')
                         .attr('src', `images/graptolites/${d['fig_name']}`);

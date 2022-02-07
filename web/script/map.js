@@ -72,12 +72,6 @@ function projectMapData(data, svg, map) {
                 .attr("stroke-width", 2)
                 .attr('r', 8)
                 .attr('fill', d => d.color);
-
-            g.append('text')
-                .style('font-size', 10)
-                .attr('dx', -4)
-                .attr('dy', 2)
-                .text(d => d.type);
         })
 
     // Update on map interaction

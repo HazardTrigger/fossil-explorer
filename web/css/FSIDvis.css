@@ -31,23 +31,6 @@ body {
     height: 100%;
 }
 
-#snet-layout {
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-
-#palemap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: block;
-    /*background-image: url("../images/map/Floian_Dapingian.jpg");*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: 0 0;*/
-    /*background-size: 100% 100%;*/
-}
-
 #map {
     width: 100%;
     height: 100%;
@@ -56,43 +39,6 @@ body {
 #time {
     width: 100%;
     height: 100%;
-}
-
-#network {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-}
-
-#snet-force {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-#snet-layout {
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-
-#tnet-layout {
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-
-#left {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 60% 40%;
-}
-
-#right {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 60% 40%
 }
 
 #mapcontainer {
@@ -170,32 +116,32 @@ body {
     display: none !important;
 }
 
-.close {
-    position: absolute;
-    right: 28px;
-    top: 10px;
-    width: 10px;
-    height: 10px;
-    opacity: 1;
-    z-index: 10;
-}
+/*.close {*/
+/*    position: absolute;*/
+/*    right: 28px;*/
+/*    top: 10px;*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    opacity: 1;*/
+/*    z-index: 10;*/
+/*}*/
 
-.close:before, .close:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 15px;
-    width: 2px;
-    background-color: #aaa;
-}
+/*.close:before, .close:after {*/
+/*    position: absolute;*/
+/*    left: 15px;*/
+/*    content: ' ';*/
+/*    height: 15px;*/
+/*    width: 2px;*/
+/*    background-color: #aaa;*/
+/*}*/
 
-.close:before {
-    transform: rotate(45deg);
-}
+/*.close:before {*/
+/*    transform: rotate(45deg);*/
+/*}*/
 
-.close:after {
-    transform: rotate(-45deg);
-}
+/*.close:after {*/
+/*    transform: rotate(-45deg);*/
+/*}*/
 
 .imglist {
     padding: 10px;
@@ -217,15 +163,6 @@ body {
     /*background-size: contain;*/
 }
 
-/*.imgcontain {*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: left;*/
-/*    background-size: contain*/
-/*}*/
-
 .imgInfo {
     display: grid;
     grid-template-rows: 20% 80%;
@@ -240,10 +177,6 @@ body {
     grid-template-columns: 95%;
     grid-template-rows: repeat(5, auto);
     justify-content: center;
-}
-
-.selected {
-    fill: red;
 }
 
 .ctrlButton {
@@ -270,6 +203,9 @@ body {
     font-size: 25px;
     font-weight: bold;
     background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
 }
 
 .buttonBorder {
@@ -280,144 +216,41 @@ body {
     grid-column-gap: 10px;
     justify-content: left;
     align-content: space-between;
-    width: 150px;
+    width: 200px;
     height: 36px;
     z-index: inherit;
 }
 
-
-.switch {
-    background-image: url("../images/icon/switch.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 22px 22px;
-    width: 40px;
-    height: 36px;
-}
-
-.layerswitch {
-    background-image: url("../images/icon/layer.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 40px 40px;
-    width: 50px;
-    height: 50px;
-}
-
-.switchButton {
-    position: absolute;
-    z-index: 100;
-    /*background-color: crimson;*/
-    top: 90%;
-    left: 1%;
-}
-
-#layerSwitch {
-    position: absolute;
-    z-index: 100;
-    top: 3%;
-    left: 1%;
-}
-
-.dropdown-content {
-    font-family: Sansation-Bold;
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    /*rig: 1%;*/
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-#funlist {
-    position: absolute;
+.buttonBorder2 {
     display: grid;
-    top: 10px;
-    left: 10px;
-    width: 425px;
-    /*border: 2px solid #777;*/
-    /*border-radius: 10px;*/
-    /*display: inline;*/
-    z-index: 100;
+    position: absolute;
     grid-template-columns: repeat(auto-fill, 40px);
     grid-template-rows: 36px;
-    justify-content: center;
+    grid-column-gap: 10px;
+    justify-content: right;
     align-content: space-between;
-    border: 1px solid #777;
-    border-radius: 10px;
-}
-
-.buttonIcon {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 22px 22px;
-    width: 40px;
+    width: 100px;
     height: 36px;
+    right: 1%;
+    top: 1%;
+    z-index: inherit;
 }
 
-#clickNode {
-    background-image: url("../images/icon/click.svg");
+
+.close {
+    background-image: url("../images/icon/close.svg");
 }
 
-#rectBrush {
-    background-image: url("../images/icon/rectbrush.svg");
+#amplify {
+    background-image: url("../images/icon/plus.svg");
 }
 
-#polyBrush {
-    background-image: url("../images/icon/polybrush.svg");
+#narrow {
+    background-image: url("../images/icon/minus.svg");
 }
 
-#showTip {
-    background-image: url("../images/icon/tooltip.svg");
-}
-
-#linkHightlight {
-    background-image: url("../images/icon/network.svg");
-}
-
-#transform {
-    background-image: url("../images/icon/transform.svg");
-}
-
-#timenet {
-    background-image: url("../images/icon/list_temporal.svg");
-}
-
-.polybrush .extent {
-    stroke-width: 2px;
-    fill: rgb(119, 119, 119);
-    fill-opacity: 0.3;
-    stroke: #222;
-    shape-rendering: crispedges;
-}
-
-#imggrid {
-    display: grid;
-    grid-gap: 5px 5px;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(auto-fill, 200px);
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-.imgcell {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 100% 100%;
+.drag {
+    background-image: url("../images/icon/drag.svg");
 }
 
 .topnav {

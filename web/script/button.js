@@ -1,4 +1,4 @@
-d3.select('#closeButton')
+d3.select('#imageWindow .close')
     .on("click", function (event) {
         d3.select('#imageWindow')
             .style('display', 'none')
@@ -7,7 +7,7 @@ d3.select('#closeButton')
         d3.select('#fsimg').style('display', 'none');
     });
 
-d3.select('#close')
+d3.select('#fsimg .close')
     .on('click', function (event) {
         d3.select('#fsimg').style('display', 'none');
     });
@@ -46,38 +46,41 @@ d3.select('#map')
         }
     });
 
-// https://stackoverflow.com/questions/38416661/how-to-remove-d3-behavior-drag-ondrag-event-handler
-let isdrag = false;
-d3.select('#imageWindow')
-    .on('dblclick', function (event) {
-        if (!isdrag) {
-            isdrag = true;
-            d3.select(this)
-                .call(
-                    d3.drag()
-                        .on('drag', function (event) {
-                            let x = $(this).position().left,
-                                y = $(this).position().top;
-                            d3.select(this).style('transform', `translate(${x + event.dx}px, ${y + event.dy}px)`);
-                        })
-                );
-        } else {
-            isdrag = false;
-            d3.select(this)
-                .call(d3.drag()
-                    .on('drag', null));
-        }
-    })
-// d3.select('#imageWindow')
-//     .call(
-//         d3.drag()
-//             .on('drag', function (event) {
-//                 let x = $(this).position().left,
-//                     y = $(this).position().top;
-//                 d3.select(this).style('transform', `translate(${x + event.dx}px, ${y + event.dy}px)`);
-//             })
-//     );
-// d3.select('#imageWindow')
-//     .call(d3.drag()
-//         .on('drag', null))
+let dragx = 0, dragy = 0;
+d3.select('#imageWindow .drag')
+    .call(
+        d3.drag()
+            .on('start', function (event) {
+                dragx = event.sourceEvent.clientX;
+                dragy = event.sourceEvent.clientY;
+            })
+            .on('drag', function (event) {
+                let x = $('#imageWindow').position().left,
+                    y = $('#imageWindow').position().top,
+                    dx = dragx - event.sourceEvent.clientX,
+                    dy = dragy - event.sourceEvent.clientY;
+                    dragx = event.sourceEvent.clientX;
+                    dragy = event.sourceEvent.clientY;
 
+                d3.select('#imageWindow').style('transform', `translate(${x - dx}px, ${y - dy}px)`);
+            })
+    );
+
+d3.select('#fsimg .drag')
+    .call(
+        d3.drag()
+            .on('start', function (event) {
+                dragx = event.sourceEvent.clientX;
+                dragy = event.sourceEvent.clientY;
+            })
+            .on('drag', function (event) {
+                let x = $('#fsimg').position().left,
+                    y = $('#fsimg').position().top,
+                    dx = dragx - event.sourceEvent.clientX,
+                    dy = dragy - event.sourceEvent.clientY;
+                    dragx = event.sourceEvent.clientX;
+                    dragy = event.sourceEvent.clientY;
+
+                d3.select('#fsimg').style('transform', `translate(${x - dx}px, ${y - dy}px)`);
+            })
+    );
