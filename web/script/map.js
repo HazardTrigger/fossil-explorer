@@ -15,7 +15,7 @@ let mapboxSvg = d3.select(mapbox_canvas).append("svg")
     .style("width", "100%")
     .style("height", "100%");
 
-map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 // https://stackoverflow.com/questions/55130943/is-there-a-way-to-disable-double-touch-zoom
 map.doubleClickZoom.disable();
