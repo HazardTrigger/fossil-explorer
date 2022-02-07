@@ -25,17 +25,17 @@ let timeXAxis = timeSvg.append('g')
             .tickFormat(d => d + 'MA')
     );
 
-let brush = d3.brushX()
-    .extent([[0, clipTimeHeight - 10], [clipTimeWidth, clipTimeHeight + 10]])
-    .on("end", function ({selection}) {
-        if (selection) {
-            filterByBrushToProject(fossilData, selection.map(timeXScale.invert), node_g, map);
-        }
-    });
-
-timeSvg.append("g")
-    .attr("class", "brush")
-    .call(brush);
+// let brush = d3.brushX()
+//     .extent([[0, clipTimeHeight - 10], [clipTimeWidth, clipTimeHeight + 10]])
+//     .on("end", function ({selection}) {
+//         if (selection) {
+//             filterByBrushToProject(fossilData, selection.map(timeXScale.invert), node_g, map);
+//         }
+//     });
+//
+// timeSvg.append("g")
+//     .attr("class", "brush")
+//     .call(brush);
 
 function drawTree(data, tree_g, width, height) {
     let root = partition(data, width, height);
