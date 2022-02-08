@@ -202,7 +202,7 @@ body {
     color: #aaa;
     font-size: 25px;
     font-weight: bold;
-    background-color: transparent;
+    background-color: #f6f5ee;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 22px 22px;
@@ -219,6 +219,8 @@ body {
     width: 200px;
     height: 36px;
     z-index: inherit;
+    top: 5px;
+    left: 5px;
 }
 
 .buttonBorder2 {
@@ -231,8 +233,8 @@ body {
     align-content: space-between;
     width: 100px;
     height: 36px;
-    right: 1%;
-    top: 1%;
+    right: 20px;
+    top: 5px;
     z-index: inherit;
 }
 
